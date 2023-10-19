@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'qa.guru'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            'com.codeborne:selenide:6.16.0',
+            'org.junit.jupiter:junit-jupiter:5.9.3',
+            'com.github.javafaker:javafaker:1.0.2'
+    )
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
